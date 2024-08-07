@@ -1,0 +1,19 @@
+{
+	"name": "youtube-tv-emulator",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "electron-forge start",
+		"package": "electron-forge package",
+		"make": "electron-forge make"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@electron-forge/cli": "^7.4.0",
+		"@electron-forge/maker-zip": "^7.4.0",
+		"electron": "^31.3.1"
+	}
+}
