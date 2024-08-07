@@ -1,7 +1,9 @@
 const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
-	win = new BrowserWindow();
+	win = new BrowserWindow({
+		fullscreen: true,
+	});
 
 	win.loadURL("http://youtube.com/tv", {
 		userAgent:
