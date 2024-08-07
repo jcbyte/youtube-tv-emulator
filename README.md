@@ -1,4 +1,4 @@
-# Youtube TV Emulator
+# <img src="assets/icon.png" height="40"> &nbsp;Youtube TV Emulator
 
 Emulate a Smart TV running Youtube from a PC, allowing you to cast Youtube content from your phone directly to your computer.
 
