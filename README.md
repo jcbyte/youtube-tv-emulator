@@ -28,6 +28,7 @@ npm run make
 
 This will create:
 
+- Squirrel installer for win32
 - Portable archive for win32
 
 ## Tech Stack
