@@ -3,6 +3,7 @@ const { app, BrowserWindow } = require("electron");
 function createWindow() {
 	win = new BrowserWindow({
 		fullscreen: true,
+		autoHideMenuBar: true,
 	});
 
 	win.loadURL("http://youtube.com/tv", {
