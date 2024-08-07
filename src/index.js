@@ -4,9 +4,15 @@ const path = require("path");
 function createWindow() {
 	// Create a new window
 	win = new BrowserWindow({
+		title: "Youtube TV Emulator",
 		icon: path.join(__dirname, "..", "assets", "icon.png"),
 		fullscreen: true,
 		autoHideMenuBar: true,
+	});
+
+	// Prevent the loaded pages title overriding ours
+	win.on("page-title-updated", (event) => {
+		event.preventDefault();
 	});
 
 	// Load youtube.com/tv with headers to spoof connection from smart TV
