@@ -3,6 +3,11 @@ const { app, BrowserWindow } = require("electron");
 function createWindow() {
 	win = new BrowserWindow();
 
+	win.loadURL("http://youtube.com/tv", {
+		userAgent:
+			"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36; Youtube ; Tizen 4.0",
+	});
+
 	win.on("closed", () => {
 		win = null;
 	});
