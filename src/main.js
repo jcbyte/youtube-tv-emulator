@@ -1,19 +1,15 @@
 import electron, { app, BrowserWindow } from "electron";
+import fs from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-
-// TODO This should be imported from a file
-const CONFIG = {
-	display: "SONY TV",
-};
 
 // Directory of the this current file
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-function createWindow() {
+function createWindow(appConfig) {
 	// Get the chosen display from the config
 	let displays = electron.screen.getAllDisplays();
-	let chosenDisplay = displays.find((display) => display.label == CONFIG.display) ?? displays[0];
+	let chosenDisplay = displays.find((display) => display.label == appConfig.display) ?? displays[0];
 
 	// Create a new window
 	const win = new BrowserWindow({
@@ -41,7 +37,12 @@ function createWindow() {
 export default function main() {
 	// When electron has loaded start the app
 	app.whenReady().then(() => {
-		createWindow();
+		const appConfigRaw = fs.readFileSync(join(__dirname, "config.json"), { encoding: "utf-8" });
+		const appConfig = JSON.parse(appConfigRaw);
+
+		console.log(appConfig);
+
+		createWindow(appConfig);
 	});
 
 	// Quit the app once all windows have been closed by the user
