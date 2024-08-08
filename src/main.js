@@ -40,9 +40,6 @@ export default function main() {
 		// Load external config file
 		const appConfig = getConfig();
 
-		// ! For debugging, remove later
-		console.log(appConfig);
-
 		// Create app
 		createWindow(appConfig);
 	});
