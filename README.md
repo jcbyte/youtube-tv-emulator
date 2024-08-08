@@ -32,7 +32,8 @@ To configure the app we can modify the `config.json` file located in `%APPDATA%\
 
 It contains a json dictionary, you can modify the below keys to change the app behaviour and settings:
 
-- `display` is the name of the monitor identified by windows, and is used to change the display the app is on, _default ""_.
+- `display` is the name of the monitor the app is displayed on, _default ""_.
+  - This is the name given by windows, and can be found in `System > Display > Advanced display`.
 
 ## Run Locally
 
