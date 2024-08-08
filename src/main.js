@@ -1,7 +1,7 @@
 import electron, { app, BrowserWindow } from "electron";
-import fs from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import { getConfig } from "./config.js";
 
 // Directory of the this current file
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -37,11 +37,13 @@ function createWindow(appConfig) {
 export default function main() {
 	// When electron has loaded start the app
 	app.whenReady().then(() => {
-		const appConfigRaw = fs.readFileSync(join(__dirname, "config.json"), { encoding: "utf-8" });
-		const appConfig = JSON.parse(appConfigRaw);
+		// Load external config file
+		const appConfig = getConfig();
 
+		// ! For debugging, remove later
 		console.log(appConfig);
 
+		// Create app
 		createWindow(appConfig);
 	});
 
