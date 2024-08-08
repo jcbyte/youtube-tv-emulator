@@ -26,6 +26,14 @@ Grab the appropriate binary from the [releases](https://github.com/jcbyte/youtub
 4. Tap "Enter TV code"
 5. Continue from step 7 [above](#connecting-to-phone)
 
+## Configuration
+
+To configure the app we can modify the `config.json` file located in `%APPDATA%\youtube-tv-emulator`.
+
+It contains a json dictionary, you can modify the below keys to change the app behaviour and settings:
+
+- `display` is the name of the monitor identified by windows, and is used to change the display the app is on, _default ""_.
+
 ## Run Locally
 
 Install dependencies
@@ -39,6 +47,8 @@ Locally start electron app
 ```bash
 npm run start
 ```
+
+When developing locally `devStorage` contains the `userData`, `appData`, etc. folders and files which we retrieve from them, for easier developing.
 
 ## Build
 

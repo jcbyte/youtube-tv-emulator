@@ -5,6 +5,7 @@ import { getPathDev } from "./utils.js";
 // Name of the configuration file
 const CONFIG_NAME = "config.json";
 
+// The default configuration which will be set if there is none
 const DEFAULT_CONFIG = {
 	display: "",
 };
