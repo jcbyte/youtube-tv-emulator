@@ -4,6 +4,7 @@
 	"author": "Joel Cutler (@jcbyte)",
 	"description": "Emulate a Smart TV running Youtube from a PC",
 	"main": "src/index.js",
+	"type": "module",
 	"scripts": {
 		"start": "electron-forge start",
 		"package": "electron-forge package",

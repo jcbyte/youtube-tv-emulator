@@ -1,13 +1,19 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
+import { app, BrowserWindow } from "electron";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 
-if (require("electron-squirrel-startup")) return;
+import isSquirrelStartup from "electron-squirrel-startup";
+if (!isSquirrelStartup) {
+	main();
+}
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
 	// Create a new window
-	win = new BrowserWindow({
+	let win = new BrowserWindow({
 		title: "Youtube TV Emulator",
-		icon: path.join(__dirname, "..", "assets", "icon.png"),
+		icon: join(__dirname, "..", "assets", "icon.png"),
 		fullscreen: true,
 		autoHideMenuBar: true,
 	});
@@ -29,12 +35,14 @@ function createWindow() {
 	});
 }
 
-// When electron has loaded start the app
-app.whenReady().then(() => {
-	createWindow();
-});
+function main() {
+	// When electron has loaded start the app
+	app.whenReady().then(() => {
+		createWindow();
+	});
 
-// Quit the app once all windows have been closed by the user
-app.on("window-all-closed", () => {
-	app.quit();
-});
+	// Quit the app once all windows have been closed by the user
+	app.on("window-all-closed", () => {
+		app.quit();
+	});
+}
