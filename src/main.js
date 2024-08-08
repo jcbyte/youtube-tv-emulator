@@ -1,17 +1,28 @@
-import { app, BrowserWindow } from "electron";
+import electron, { app, BrowserWindow } from "electron";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+
+// TODO This should be imported from a file
+const CONFIG = {
+	display: "SONY TV",
+};
 
 // Directory of the this current file
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
+	// Get the chosen display from the config
+	let displays = electron.screen.getAllDisplays();
+	let chosenDisplay = displays.find((display) => display.label == CONFIG.display) ?? displays[0];
+
 	// Create a new window
 	const win = new BrowserWindow({
 		title: "Youtube TV Emulator",
 		icon: join(__dirname, "..", "assets", "icon.png"),
 		fullscreen: true,
 		autoHideMenuBar: true,
+		x: chosenDisplay.bounds.x,
+		y: chosenDisplay.bounds.y,
 	});
 
 	// Prevent the loaded pages title overriding ours
