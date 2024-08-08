@@ -2,6 +2,7 @@ import { app, BrowserWindow } from "electron";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
+// If this is run as startup, then do default electron-squirrel-startup and do not run app regularly
 import isSquirrelStartup from "electron-squirrel-startup";
 if (!isSquirrelStartup) {
 	main();
@@ -11,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
 	// Create a new window
-	let win = new BrowserWindow({
+	const win = new BrowserWindow({
 		title: "Youtube TV Emulator",
 		icon: join(__dirname, "..", "assets", "icon.png"),
 		fullscreen: true,
@@ -27,11 +28,6 @@ function createWindow() {
 	win.loadURL("http://youtube.com/tv", {
 		userAgent:
 			"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36; Youtube ; Tizen 4.0",
-	});
-
-	// On window closing, clear win reference for garbage collection
-	win.on("closed", () => {
-		win = null;
 	});
 }
 
