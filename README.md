@@ -4,6 +4,10 @@ Emulate a Smart TV running Youtube from a PC, allowing you to cast Youtube conte
 
 Achieved by spoofing the useragent to make your connection appear to come from a smart TV, allowing you to access [youtube.com/tv](https://youtube.com/tv).
 
+## Installation
+
+Grab the appropriate binary from the [releases](https://github.com/jcbyte/youtube-tv-emulator/releases) page.
+
 ## Run Locally
 
 Install dependencies
