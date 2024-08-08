@@ -2,7 +2,7 @@ import { app, BrowserWindow } from "electron";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
-// ? Should this definition be elsewhere
+// Directory of the this current file
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
