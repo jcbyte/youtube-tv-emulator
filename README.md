@@ -1,12 +1,12 @@
 # <img src="assets/icon.png" height="40"> &nbsp;Youtube TV Emulator
 
-Emulate a Smart TV running Youtube from a PC, allowing you to cast Youtube content from your phone directly to your computer.
+Electron app to emulate a Smart TV running Youtube from a PC, allowing you to cast Youtube content from your phone directly to your computer.
 
 Achieved by spoofing the useragent to make your connection appear to come from a smart TV, allowing you to access [youtube.com/tv](https://youtube.com/tv).
 
 ## Installation
 
-Grab the appropriate binary from the [releases](https://github.com/jcbyte/youtube-tv-emulator/releases) page.
+Precompiled binaries for **Windows** are avalible in [Releases](https://github.com/jcbyte/youtube-tv-emulator/releases).
 
 ## Connecting To Phone
 
@@ -37,19 +37,19 @@ It contains a json dictionary, you can modify the below keys to change the app b
 
 ## Run Locally
 
-Install dependencies
+Install dependencies:
 
 ```bash
 npm i
 ```
 
-Locally start electron app
+Start electron app:
 
 ```bash
 npm run start
 ```
 
-When developing locally `devStorage` contains the `userData`, `appData`, etc. folders and files which we retrieve from them, for easier developing.
+When developing locally `devStorage/` contains the `userData`, `appData`, etc. folders and files which we regularly retrieve from.
 
 ## Build
 
