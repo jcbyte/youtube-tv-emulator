@@ -53,8 +53,6 @@ When developing locally `devStorage` contains the `userData`, `appData`, etc. fo
 
 ## Build
 
-Build
-
 ```sh
 npm run make
 ```
@@ -64,10 +62,6 @@ This will create:
 - Squirrel installer for win32
 - Portable archive for win32
 
-## Tech Stack
+## Licence
 
-Electron
-
-## Authors
-
-- [@jcbyte](https://github.com/jcbyte)
+[Apache License 2.0](LICENSE)
